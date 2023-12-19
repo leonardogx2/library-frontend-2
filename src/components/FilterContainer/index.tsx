@@ -51,7 +51,7 @@ const FilterContainer = (props: IFilterContainer) => {
         const regex = new RegExp(e.target.value.trim(), 'i');
         const filters = { page: 1, size: 5, title: e.target.value.trim() };
         const filteredBooks = await getAllBooks(filters);
-        setBooks(filteredBooks);
+        setBooks(filteredBooks.books);
       } catch (err) {
         setMessage({ content: 'Erro ao pesquisar livros...', severity: 'fail' });
       }
